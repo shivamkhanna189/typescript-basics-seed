@@ -1,17 +1,21 @@
-console.log('Hello TypeScript!');
-
-const pizzas = [
-  { name: "peperroni", toppings: ["peproni"] }
-]
-
-const mappedPizzas = pizzas.map(data => data.name.toUpperCase())
-console.log(pizzas, mappedPizzas);
-
 const pizza = {
-  name: "Blazing Inferno",
-  getName: () => pizza.name
+  name: "peproni",
+  toppings: ["perproni"]
 }
 
-console.log(pizza.getName());
+function order({ name: pizzaName, toppings: pizzaToppings }: any) {
+  return { pizzaName, pizzaToppings }
+}
+
+const { pizzaName } = order(pizza)
+console.log(pizzaName);
+
+const toppings = ["aaaa", "adfas", "asdfadf", "adsfasdf"];
+const [a, b, c] = toppings;
+
+console.log(a, b, c);
+
+
+
 
 
