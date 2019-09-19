@@ -1,19 +1,31 @@
-const pizza = {
-  name: "peproni",
-  toppings: ["perproni"]
+interface Sizes {
+  size: string[];
+  id?: number
 }
 
-function order({ name: pizzaName, toppings: pizzaToppings }: any) {
-  return { pizzaName, pizzaToppings }
+interface Pizza extends Sizes {
+  name: string;
+  [key: number]: string;
+
 }
 
-const { pizzaName } = order(pizza)
-console.log(pizzaName);
 
-const toppings = ["aaaa", "adfas", "asdfadf", "adsfasdf"];
-const [a, b, c] = toppings;
+let pizza: Pizza;
 
-console.log(a, b, c);
+function createPizza(name: string, size: string[]): Pizza {
+  return {
+    name,
+    size
+  }
+}
+
+pizza = createPizza("Cheese Bust", ["medium", " large"])
+pizza[1] = "xyx"
+pizza[2] = "asdfasdf";
+
+console.log(pizza);
+// console.log(pizza[1]);
+
 
 
 
